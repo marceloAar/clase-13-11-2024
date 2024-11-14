@@ -23,9 +23,9 @@ class Command(BaseCommand):
         for grupo_nombre, permisos in grupos_permisos.items():
             grupo, creado = Group.objects.get_or_create(name=grupo_nombre)
 
-        for permisos_codename in permisos:
-            permiso = Permission.objects.get(codename=permisos_codename)
-            grupo.permissions.add(permiso)
+            for permisos_codename in permisos:
+                permiso = Permission.objects.get(codename=permisos_codename)
+                grupo.permissions.add(permiso)
 
         if creado:
             self.stdout.write(self.style.SUCCESS(f'Grupo {grupo_nombre} creado y persmisos asignados con éxito.'))    
