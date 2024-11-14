@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %} FORMULARIO CREAR OFERTAS  {% endblock %}
+{% block content %}
+
+    <div style="text-align: center;">
+        <h1>Bienvenidos a la creación Ofertas</h1>
+    </div>
+
+    <div>
+        <form method = "post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-secondary bg-danger">Crear Oferta</button>
+        </form>
+    </div>
+
+    <button class="borrar">
+        <div class="trash">
+            <div class="top">
+                <div class="paper"></div>
+            </div>
+            <span>Borrar</span> <!-- Texto del botón -->
+        </div>
+    </button>
+    
+{% endblock %}
